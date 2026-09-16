@@ -158,5 +158,5 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/donnybeelo/convey.git
-        tag: '50.1'
-        commit: be02d414d39f9c808889faa2aa00171916447593
+        tag: '50.2-1'
+        commit: 2a0b661bf1d7fde57b6dfcb7e09ce33d7b4b9f42
