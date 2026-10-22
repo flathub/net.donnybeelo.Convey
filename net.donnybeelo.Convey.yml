@@ -1,7 +1,7 @@
 # flatpak-builder config for Convey.
 app-id: net.donnybeelo.Convey
 runtime: org.gnome.Platform
-runtime-version: '50'
+runtime-version: '51'
 sdk: org.gnome.Sdk
 command: convey
 
@@ -15,9 +15,13 @@ finish-args:
   - --talk-name=org.gnome.Contacts
   - --talk-name=org.gnome.OnlineAccounts
   - --talk-name=org.gnome.Settings
+  - --filesystem=home
 
   # Folks contact and avatar support (via EDS)
   - --talk-name=org.gnome.evolution.dataserver.*
+
+  # OpenPGP passphrase prompts
+  - --talk-name=org.gnome.keyring.SystemPrompter
  
 cleanup:
   - /include
@@ -76,6 +80,7 @@ modules:
       - -DENABLE_VALA_BINDINGS=ON
       - -DENABLE_WEATHER=OFF
       - -DWITH_LIBDB=OFF
+      - -DENABLE_OAUTH2_WEBKITGTK=OFF
       - -DWITH_OPENLDAP=OFF
     sources:
       - type: git
@@ -158,5 +163,5 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/donnybeelo/convey.git
-        tag: '50.2-1'
-        commit: 2a0b661bf1d7fde57b6dfcb7e09ce33d7b4b9f42
+        tag: '51.0'
+        commit: d24c1da859fc9cc2cfb19872b1d8e972d4dc1a20
